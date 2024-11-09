@@ -1,0 +1,5 @@
+//packages node
+
+npm i express bcryptjs
+npm i express cookie-parser cors helmet joi jsonwebtoken mongoose
+npm i express nodemailer
