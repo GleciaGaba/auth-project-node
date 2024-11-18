@@ -1,4 +1,5 @@
 // importations des modules nécessaires
+require("dotenv").config(); //permet de charger les variables d'environnement
 const express = require("express"); // créer le serveur
 const helmet = require("helmet"); // sécurité
 const cors = require("cors"); //cross-origin
@@ -32,6 +33,4 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello from the server" });
 });
 // Démarrage du serveur
-app.listen(process.env.PORT, () => {
-  console.log("listening");
-});
+app.listen(process.env.PORT || 3001);
