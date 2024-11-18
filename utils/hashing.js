@@ -1,3 +1,4 @@
+const { createHmac } = require("crypto");
 const { hash, compare } = require("bcrypt");
 //importation de la fonction hash
 
@@ -11,5 +12,10 @@ exports.doHash = async (value, saltValue) => {
 
 exports.doHashValidation = async (value, hashedValue) => {
   const result = await compare(value, hashedValue);
+  return result;
+};
+
+exports.hmacProcess = async (value, key) => {
+  const result = await createHmac("sha256", key).update(value).digest("hex");
   return result;
 };
