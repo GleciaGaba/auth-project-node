@@ -15,7 +15,7 @@ exports.doHashValidation = async (value, hashedValue) => {
   return result;
 };
 
-exports.hmacProcess = async (value, key) => {
-  const result = await createHmac("sha256", key).update(value).digest("hex");
+exports.hmacProcess = (value, key) => {
+  const result = createHmac("sha256", key).update(value).digest("hex");
   return result;
 };
