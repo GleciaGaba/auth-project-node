@@ -4,7 +4,7 @@ const router = express.Router();
 const postController = require("../controllers/postController");
 
 router.get("/all-posts", postController.getPosts);
-router.get("/single-post", postsController.singlePost);
+router.get("/single-post", postController.singlePost);
 router.post("/create-post", identifier, postController.CreatePost);
 
 router.put("/update-post", identifier, postController.updatePost);

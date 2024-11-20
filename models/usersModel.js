@@ -21,26 +21,26 @@ const userSchema = mongoose.Schema(
       trim: true,
       select: false,
     },
-    verified: {
-      type: Boolean,
-      default: false,
-    },
-    verificationCode: {
-      type: String,
-      selected: false,
-    },
-    verificationCodeValidation: {
-      type: String,
-      select: false,
-    },
-    forgotPasswordCode: {
-      type: String,
-      select: false,
-    },
-    forgotPasswordCodeValidation: {
-      type: Number,
-      select: false,
-    },
+    //verified: {
+    //  type: Boolean,
+    //  default: false,
+    //},
+    //verificationCode: {
+    //  type: String,
+    //  selected: false,
+    //},
+    //verificationCodeValidation: {
+    //  type: String,
+    //  select: false,
+    //},
+    //forgotPasswordCode: {
+    //  type: String,
+    //  select: false,
+    //},
+    //forgotPasswordCodeValidation: {
+    //  type: Number,
+    //  select: false,
+    //},
   },
   {
     timestamps: true,
