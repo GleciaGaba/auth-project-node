@@ -34,7 +34,7 @@ mongoose
 app.use("/api/auth", authRouter);
 app.use("/api/posts", postRouter);
 app.get("/", (req, res) => {
-  res.json({ message: "Hello from the server" });
+  res.json({ message: "Hello from hell!!!!" });
 });
 // Démarrage du serveur
 app.listen(process.env.PORT || 3000);
