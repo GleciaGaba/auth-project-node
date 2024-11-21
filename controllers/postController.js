@@ -21,9 +21,10 @@ exports.getPosts = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-exports.CreatePost = async (req, res) => {
+exports.createPost = async (req, res) => {
   const { title, description } = req.body;
   const { userId } = req.user;
+
   try {
     const { error, value } = createPostSchema.validate({
       title,
@@ -59,8 +60,11 @@ exports.singlePost = async (req, res) => {
 
 exports.updatePost = async (req, res) => {
   const { _id } = req.query;
+  console.log(_id);
+
   const { title, description } = req.body;
   const { userId } = req.user;
+  console.log(userId);
   try {
     const { error, value } = createPostSchema.validate({
       title,
@@ -72,7 +76,9 @@ exports.updatePost = async (req, res) => {
         .status(401)
         .json({ success: false, message: error.details[0].message });
     }
-    const existingPost = await Post.findOne({ _id });
+    const existingPost = await Post.findById(_id);
+    console.log(existingPost);
+
     if (!existingPost) {
       return res
         .status(404)
