@@ -1,8 +1,9 @@
 const { createPostSchema } = require("../middlewares/validator");
 const Post = require("../models/postsModels");
+
 exports.getPosts = async (req, res) => {
   const { page } = req.query;
-  const postsPerPage = 10;
+  const postsPerPage = 300;
 
   try {
     let pageNum = 0;
@@ -11,6 +12,7 @@ exports.getPosts = async (req, res) => {
     } else {
       pageNum = page - 1;
     }
+
     const result = await Post.find()
       .sort({ createdAt: -1 })
       .skip(pageNum * postsPerPage)

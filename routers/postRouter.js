@@ -3,7 +3,7 @@ const { identifier } = require("../middlewares/identification");
 const postController = require("../controllers/postController");
 const router = express.Router();
 
-router.get("/all-posts", postController.getPosts);
+router.get("/all-posts", identifier, postController.getPosts);
 router.get("/single-post", postController.singlePost);
 router.post("/create-post", identifier, postController.createPost);
 
